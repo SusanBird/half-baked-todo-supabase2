@@ -29,12 +29,23 @@ export async function deleteAllTodos() {
 
 export async function getTodos() {
     // get all todos for this user from supabase
+    const user = getUser();                //need to get user here? unsure 
+
+    const response = await client
+
+        .from('todos')
+        .select()
+        .match({ user_id: user.id });
 
     return checkError(response);
 }
 
 export async function completeTodo(id) {
     // find the and update (set complete to true), the todo that matches the correct id
+    const response = await client
+        .from('todos')
+        .update({ complete: true })
+        .match({ id });
 
     return checkError(response);
 }
