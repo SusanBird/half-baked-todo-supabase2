@@ -125,3 +125,11 @@ footer {
 .auth-container button {
     margin: 10px;
 }
+
+
+.todo {
+    background-color: rgb(4, 3, 71);
+    width: 80%;
+    font-size: 2rem;
+    margin: 10px;
+}

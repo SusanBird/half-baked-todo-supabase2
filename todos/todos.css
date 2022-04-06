@@ -24,24 +24,28 @@
     margin-left: 10px;
 }
 
-.todo {
-    background-color: lightgray;
+.todo-item {
+    background-color: rgb(132, 130, 220);
     width: 80%;
     font-size: 2rem;
     margin: 10px;
+    text-align: center;
 }
 
-.incomplete {
+/* .incomplete {
     cursor: pointer;
-}
+} */
 
-.complete {
-    text-decoration: line-through;
-    background-color: lightgreen;
-}
 
 .delete-button {
-    background-color: crimson;
+    background-color: rgb(20, 220, 140);
     margin: 20px;
     font-size: 1.3rem;
 }
+
+.completed {
+    text-decoration: line-through;
+    cursor: not-allowed;
+    background-color: lightgreen;
+}
+

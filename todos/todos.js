@@ -46,11 +46,11 @@ async function fetchAndDisplayTodos() {
         todoItemEl.classList.add('todo-item');
         todoItemEl.textContent = `${todo.todo}`;
 
-        if (todoItemEl.complete) {
-            todoItemEl.classList.add('complete');
+        if (todo.complete) {
+            todoItemEl.classList.add('completed');
         } else {
             todoItemEl.addEventListener('click', async () => {
-                await completeTodo(todoItemEl.id);
+                await completeTodo(todo.id);
 
                 fetchAndDisplayTodos();
             });
