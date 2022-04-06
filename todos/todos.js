@@ -51,7 +51,7 @@ async function displayTodos() {
     }
 }
 
-// add an on load listener that fetches and displays todos on load
+// add an on load eventlistener that fetches and displays todos on load
 window.addEventListener('load', () => {
     displayTodos();
 });
