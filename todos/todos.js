@@ -6,7 +6,7 @@ import {
     logout,
     deleteAllTodos, 
 } from '../fetch-utils.js';
-// import { renderTodo } from '../render-utils.js';
+import { renderTodo } from '../render-utils.js';
 
 checkAuth();
 
@@ -27,43 +27,33 @@ todoForm.addEventListener('submit', async (e) => {
     
     todoForm.reset();
 
-    await fetchAndDisplayTodos();
+    await displayTodos();
 });
 
-async function fetchAndDisplayTodos() {
+async function displayTodos() {
 
     todosEl.textContent = '';
-
+    
     // fetch the todos
     const todoList = await getTodos();
-    
-    // display the list of todos
-    // be sure to give each todo an event listener
-    // on click, complete that todo
+    //loop over todos
     for (let todo of todoList) {
-        const todoItemEl = document.createElement('p');
+        //for each todo, render new todo
+        const todoEl = renderTodo(todo);
+        //add an eventlistener for completing the todo
+        todoEl.addEventListener('click', async () => {
+            await completeTodo(todo.id);
+            displayTodos();
+        });
 
-        todoItemEl.classList.add('todo-item');
-        todoItemEl.textContent = `${todo.todo}`;
-
-        if (todo.complete) {
-            todoItemEl.classList.add('completed');
-        } else {
-            todoItemEl.addEventListener('click', async () => {
-                await completeTodo(todo.id);
-
-                fetchAndDisplayTodos();
-            });
-        }
-
-        todosEl.append(todoItemEl);
+        //append todo to the todos element
+        todosEl.append(todoEl);
     }
-
 }
 
-// add an on load listener that fetches and displays todos on load
+// add an on load eventlistener that fetches and displays todos on load
 window.addEventListener('load', () => {
-    fetchAndDisplayTodos();
+    displayTodos();
 });
 
 logoutButton.addEventListener('click', () => {
@@ -76,5 +66,5 @@ deleteButton.addEventListener('click', async () => {
     await deleteAllTodos();
 
     // then refetch and display the updated list of todos
-    await fetchAndDisplayTodos();
+    await displayTodos();
 });
