@@ -24,7 +24,7 @@
     margin-left: 10px;
 }
 
-.todo-item {
+.todo {
     background-color: rgb(132, 130, 220);
     width: 80%;
     font-size: 2rem;
@@ -43,7 +43,7 @@
     font-size: 1.3rem;
 }
 
-.completed {
+.complete {
     text-decoration: line-through;
     cursor: not-allowed;
     background-color: lightgreen;
