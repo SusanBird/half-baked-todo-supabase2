@@ -25,23 +25,27 @@
 }
 
 .todo {
-    background-color: lightgray;
+    background-color: rgb(132, 130, 220);
     width: 80%;
     font-size: 2rem;
     margin: 10px;
+    text-align: center;
 }
 
-.incomplete {
+/* .incomplete {
     cursor: pointer;
+} */
+
+
+.delete-button {
+    background-color: rgb(20, 220, 140);
+    margin: 20px;
+    font-size: 1.3rem;
 }
 
 .complete {
     text-decoration: line-through;
+    cursor: not-allowed;
     background-color: lightgreen;
 }
 
-.delete-button {
-    background-color: crimson;
-    margin: 20px;
-    font-size: 1.3rem;
-}

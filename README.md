@@ -31,7 +31,7 @@ You will be creating a to do list using Supabase. Users should only be able to p
 | **Deploy Requirements**                               |        |
 | Main branch deployed to Netlify                       | 0      |
 | Open PR from `dev` branch with Netlify deploy preview | 0      |
-| **Code Requirments**                                  |        |
+| **Code Requirements**                                 |        |
 | Users see a list of all their todos                   | 2.5    |
 | Users can add todos to the database                   | 2.5    |
 | Users can complete todos                              | 2.5    |
